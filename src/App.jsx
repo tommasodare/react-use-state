@@ -36,12 +36,12 @@ export default function App() {
             <h1>Tabs</h1>
 
             <div className="container">
+
                 <div>
                     {
                         tabs.map(tab => (
-                            <button key={`tab-${tab.id}`} className="btn btn-primary" onClick=""}
-                    ))
-                    }
+                            <button key={`tab-${tab.id}`} className="btn btn-primary" onClick={handleTabClick}>{tab.name}</button>
+                        ))}
 
                 </div>
 
@@ -56,8 +56,3 @@ export default function App() {
 
     )
 }
-
-<button className='btn btn-primary me-2'>HTML</button>
-                <button className='btn btn-primary me-2'>CSS</button>
-                <button className='btn btn-primary me-2'>JS</button>
-                <button className='btn btn-primary me-2'>PHP</button>
