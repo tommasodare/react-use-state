@@ -25,8 +25,10 @@ const tabs = [
 
 export default function App() {
 
-    function handleTabClick() {
-        console.log('Cliccato');
+    const [activeTab, setActiveTab] = useState(1)
+
+    function handleTabClick(id) {
+        console.log('Cliccata la tab', id);
 
     }
 
@@ -40,14 +42,14 @@ export default function App() {
                 <div>
                     {
                         tabs.map(tab => (
-                            <button key={`tab-${tab.id}`} className="btn btn-primary" onClick={handleTabClick}>{tab.name}</button>
+                            <button key={`tab-${tab.id}`} className="btn btn-primary" onClick={handleTabClick(tab.id)}>{tab.name}</button>
                         ))}
 
                 </div>
 
 
                 <div className="content">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore magnam architecto veritatis, aliquid autem eveniet quibusdam quas assumenda! Perspiciatis fugiat ipsam similique pariatur, ipsum esse! Doloribus architecto beatae quis similique!
+
                 </div>
 
 
