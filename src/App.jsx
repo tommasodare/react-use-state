@@ -30,6 +30,7 @@ export default function App() {
     function handleTabClick(id) {
         console.log('Cliccata la tab', id);
 
+        setActiveTab(id - 1)
     }
 
     return (
@@ -42,14 +43,15 @@ export default function App() {
                 <div>
                     {
                         tabs.map(tab => (
-                            <button key={`tab-${tab.id}`} className="btn btn-primary" onClick={handleTabClick(tab.id)}>{tab.name}</button>
-                        ))}
+                            <button key={`tab-${tab.id}`} className={`btn btn-primary m-2 ${activeTab === tab.id - 1 ? 'bg-warning' : ''}`} onClick={() => handleTabClick(tab.id)}>{tab.name}</button>
+                        ))
+                    }
 
                 </div>
 
 
                 <div className="content">
-
+                    {tabs[activeTab].content}
                 </div>
 
 
